@@ -1,0 +1,12 @@
+include(default)
+
+[settings]
+compiler=clang
+compiler.version=7.0
+compiler.libcxx=libc++
+
+[env]
+libpng:CC=/usr/local/Cellar/llvm/7.0.1/bin/clang
+libtiff:CC=/usr/local/Cellar/llvm/7.0.1/bin/clang
+opencv:CC=/usr/local/Cellar/llvm/7.0.1/bin/clang
+opencv:CXX=/usr/local/Cellar/llvm/7.0.1/bin/clang++
