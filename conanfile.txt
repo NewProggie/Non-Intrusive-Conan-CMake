@@ -3,8 +3,3 @@ opencv/4.0.1@conan/stable
 
 [generators]
 cmake_paths
-
-[options]
-opencv:jasper=False
-opencv:openexr=False
-opencv:webp=False
