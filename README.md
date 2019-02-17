@@ -1,6 +1,8 @@
 # Non-Intrusive-Conan-CMake
 This repository demonstrates an approach of using the Conan package manager in CMake-based projects without interfering the build configuration.
 
+[![CircleCI](https://circleci.com/gh/NewProggie/Non-Intrusive-Conan-CMake.svg?style=shield)](https://circleci.com/gh/NewProggie/Non-Intrusive-Conan-CMake)
+
 ## Build steps
 ```bash
 $ pip install conan
