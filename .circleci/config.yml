@@ -1,19 +1,21 @@
 version: 2
-gcc-7:
-  docker:
-    - image: conanio/gcc7
-  steps:
-    - checkout
-    - run:
-        name: Use Conan without modifying CMake config
-        command: |
-          sudo pip install --upgrade conan
-          mkdir build && cd build
-          conan install ..
-          cmake -DCMAKE_TOOLCHIN_FILE=conan_paths.cmake ..
-          cmake --build .
+jobs:
+  fetch_and_build:
+    docker:
+      - image: conanio/gcc7
+    steps:
+      - checkout
+      - run:
+          name: Use Conan without modifying CMake config
+          command: |
+            sudo pip install --upgrade conan
+            mkdir build && cd build
+            conan install ..
+            cmake -DCMAKE_TOOLCHIN_FILE=conan_paths.cmake ..
+            cmake --build .
+
 workflows:
   version: 2
-  build_and_test:
+  workflow:
     jobs:
-      gcc-7
+      - fetch_and_build
