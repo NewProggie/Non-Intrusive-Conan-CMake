@@ -11,7 +11,9 @@ jobs:
             sudo pip install --upgrade conan
             mkdir build && cd build
             conan install ..
-            cmake -DCMAKE_TOOLCHIN_FILE=conan_paths.cmake ..
+            cmake -DCMAKE_TOOLCHAIN_FILE=conan_paths.cmake \
+                -DOpenCV_DIR=$(grep -om1 '".*opencv.*"' conan_paths.cmake |sed 's/"//g')lib/ \
+                ${CIRCLE_WORKING_DIRECTORY}
             cmake --build .
 
 workflows:
